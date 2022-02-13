@@ -6,11 +6,15 @@ use CodeIgniter\Model;
 
 class ProdutoModel extends Model
 {
-    public function cadastroProduto()
-    {
-        return "Módulo de cadastro";
-
-    }
+    protected $table = 'produtos';
+    protected $primaryKey = 'id';
+    protected $allowedFields = [
+        'id',
+        'nome',
+        'tipo',
+        'descricao',
+        'quantidade'
+    ];
 }
 
 ?>
