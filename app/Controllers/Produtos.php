@@ -17,8 +17,10 @@ class Produtos extends BaseController
 
     public function index()
     {
-        $produtos = $this->ProdutoModel->findAll();
+        $produtos = $this->ProdutoModel->paginate(20);
+        $pager = $this->ProdutoModel->pager;
         $data['produtos'] = $produtos;
+        $data['pager'] = $pager;
         echo view('templates/header');
         echo view('produtos/indexProduto', $data);
         echo view('templates/footer');

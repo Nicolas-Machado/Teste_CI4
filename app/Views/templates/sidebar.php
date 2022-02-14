@@ -22,6 +22,11 @@
         <i class="nav-icon fas fa-th">Produtos</i>
       </a>
     </li>
+    <li class="nav-item">
+      <a href="/pedidos" class="nav-link">
+        <i class="nav-icon fas fa-th">Pedidos</i>
+      </a>
+    </li>
   </div>
   <!-- /.sidebar -->
 </aside>

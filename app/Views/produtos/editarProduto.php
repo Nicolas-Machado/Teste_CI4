@@ -26,7 +26,7 @@
                                     </div>
                                 </div>
                                 <label for="descricao-produto">Descrição (Opcional)</label><br>
-                                <textarea name="descricao" style="height: 150px; width: 500px" class="form-control" value="<?= $produto['descricao'] ?>"></textarea>
+                                <textarea name="descricao" style="height: 150px; width: 500px" class="form-control"><?= $produto['descricao'] ?></textarea>
                                 <div class="card-footer">
                                     <button type="submit" class="btn btn-success">Salvar</button>
                                     <a href="/produtos" class="btn btn-primary">Voltar</a>

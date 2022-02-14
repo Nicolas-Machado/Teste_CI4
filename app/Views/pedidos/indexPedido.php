@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h3 class="card-title">Produtos Cadastrados</h3>
+                    <h3 class="card-title">Pedidos Cadastrados</h3>
                 </div>
             </div>
         </div>
@@ -16,33 +16,39 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header">
-                            <a href="/produtos/cadastroProduto" class="btn btn-success">Cadastrar Produto</a>
+                            <a href="/pedidos/cadastroPedido" class="btn btn-success">Cadastrar Pedido</a>
                         </div>
 
                         <div class="card-body">
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
-                                        <th>Nome do Produto</th>
-                                        <th>Tipo</th>
+                                        <th>Chave NFe</th>
+                                        <th>Fornecedor (Nome)</th>
+                                        <th>Produto</th>
                                         <th>Quantidade</th>
+                                        <th>Valor</th>
+                                        <th>Status</th>
                                         <th>Descrição</th>
                                         <th>Ações</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($produtos as $produto) : ?>
+                                    <?php foreach ($pedidos as $pedido) : ?>
                                         <tr>
                                             <td>
-                                                <a href="/produtos/verProduto/<?= $produto['id'] ?>"><?= $produto['nome'] ?>
+                                                <a href="/pedidos/verPedido/<?= $pedido['id'] ?>"><?= $pedido['chave_nfe'] ?>
                                                 </a>
                                             </td>
-                                            <td><?= $produto['tipo'] ?></td>
-                                            <td><?= $produto['quantidade'] ?></td>
-                                            <td><?= $produto['descricao'] ?></td>
+                                            <td><?= $pedido['nome_fornecedor'] ?></td>
+                                            <td><?= $pedido['nome_produto'] ?></td>
+                                            <td><?= $pedido['quantidade'] ?></td>
+                                            <td><?= $pedido['valor'] ?></td>
+                                            <td><?= $pedido['status'] ?></td>
+                                            <td><?= $pedido['descricao'] ?></td>
                                             <td>
-                                                <a href="/produtos/editarProduto/<?= $produto['id'] ?>" class="btn btn-warning">Editar</a>
-                                                <a href="/produtos/excluirProduto/<?= $produto['id'] ?>" class="btn btn-danger">Excluir</a>
+                                                <a href="/pedidos/editarPedido/<?= $pedido['id'] ?>" class="btn btn-warning">Editar</a>
+                                                <a href="/pedidos/excluirPedido/<?= $pedido['id'] ?>" class="btn btn-danger">Excluir</a>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>

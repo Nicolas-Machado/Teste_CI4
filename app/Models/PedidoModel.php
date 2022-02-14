@@ -4,14 +4,14 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class ProdutoModel extends Model
+class PedidoModel extends Model
 {
     protected $table = 'pedidos';
     protected $primaryKey = 'id';
     protected $allowedFields = [
         'id',
-        'nome',
-        'chave_`nfe',
+        'nome_fornecedor',
+        'chave_nfe',
         'nome_produto',
         'quantidade',
         'valor',
@@ -19,5 +19,3 @@ class ProdutoModel extends Model
         'descricao'
     ];
 }
-
-?>

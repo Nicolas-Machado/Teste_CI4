@@ -9,7 +9,7 @@
                         <div class="card-header">
                             <h3 class="card-title">Informações do Produto</h3>
                         </div>
-                        <form action="/produtos/store" method="POST">
+                        <form>
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="nome-produto">Nome do Produto</label>
@@ -26,7 +26,7 @@
                                     </div>
                                 </div>
                                 <label for="descricao-produto">Descrição (Opcional)</label><br>
-                                <textarea name="descricao" style="height: 150px; width: 500px" value="<?= $produto['descricao'] ?>" disabled></textarea>
+                                <textarea name="descricao" style="height: 150px; width: 500px" disabled><?= $produto['descricao'] ?></textarea>
                                 <div class="card-footer">
                                     <a href="/produtos" class="btn btn-primary">Voltar</a>
                                 </div>
