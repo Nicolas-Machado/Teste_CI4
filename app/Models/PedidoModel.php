@@ -18,4 +18,15 @@ class PedidoModel extends Model
         'status',
         'descricao'
     ];
+
+    public function buscarPedido($filtro, $campo)
+    {
+        $sql = "
+            SELECT * FROM pedidos
+            WHERE $filtro LIKE '%$campo%'
+        ";
+
+        $query = $this->db->query($sql);
+        return $query->getResultArray();
+    }
 }

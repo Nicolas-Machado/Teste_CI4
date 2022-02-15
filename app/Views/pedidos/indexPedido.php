@@ -16,6 +16,19 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header">
+                            <form action="/pedidos/" method="POST">
+                                <select class="col-auto" name="filtro">
+                                    <option value="chave_nfe">Chave NFe</option>
+                                    <option value="nome_fornecedor">Nome do Fornecedor</option>
+                                    <option value="nome_produto">Nome do Produto</option>
+                                    <option value="quantidade">Quantidade</option>
+                                    <option value="valor">Valor</option>
+                                    <option value="status">Status</option>
+                                    <option value="descricao">Descrição</option>
+                                </select>
+                                <input type="text" name="campo" size="col-sm-3" id="pesquisaProduto" placeholder="Digite Aqui Sua Pesquisa">
+                                <button type="submit" class="btn btn-secondary">Pesquisar</button>
+                            </form>
                             <a href="/pedidos/cadastroPedido" class="btn btn-success">Cadastrar Pedido</a>
                         </div>
 

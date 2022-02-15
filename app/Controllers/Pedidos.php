@@ -19,8 +19,17 @@ class Pedidos extends BaseController
 
     public function index()
     {
+        $filtro = $this->request->getVar('filtro');
+        $campo  = $this->request->getVar('campo');
+
         $pedidos = $this->PedidoModel->paginate(20);
         $pager = $this->PedidoModel->pager;
+
+        if (isset($campo)) {
+            $pedidos = $this->PedidoModel->buscarPedido($filtro, $campo);
+            $data['produtos'] = $pedidos;
+        }
+
         $data['pedidos'] = $pedidos;
         $data['pager'] = $pager;
         echo view('templates/header');

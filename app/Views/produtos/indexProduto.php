@@ -16,8 +16,19 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header">
+                            <form action="/produtos/" method="POST">
+                                <select class="col-auto" name="filtro">
+                                    <option value="nome">Nome do Produto</option>
+                                    <option value="tipo">Tipo</option>
+                                    <option value="quantidade">Quantidade</option>
+                                    <option value="descricao">Descrição</option>
+                                </select>
+                                <input type="text" name="campo" size="col-sm-3" id="pesquisaProduto" placeholder="Digite Aqui Sua Pesquisa">
+                                <button type="submit" class="btn btn-secondary">Pesquisar</button>
+                            </form>
                             <a href="/produtos/cadastroProduto" class="btn btn-success">Cadastrar Produto</a>
                         </div>
+
 
                         <div class="card-body">
                             <table class="table table-bordered">

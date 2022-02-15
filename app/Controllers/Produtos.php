@@ -17,9 +17,18 @@ class Produtos extends BaseController
 
     public function index()
     {
+        $filtro = $this->request->getVar('filtro');
+        $campo  = $this->request->getVar('campo');
+
         $produtos = $this->ProdutoModel->paginate(20);
-        $pager = $this->ProdutoModel->pager;
         $data['produtos'] = $produtos;
+
+        if (isset($campo)) {
+            $produtos = $this->ProdutoModel->buscarProduto($filtro, $campo);
+            $data['produtos'] = $produtos;
+        }
+
+        $pager = $this->ProdutoModel->pager;
         $data['pager'] = $pager;
         echo view('templates/header');
         echo view('produtos/indexProduto', $data);
