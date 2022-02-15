@@ -5,7 +5,7 @@ use CodeIgniter\Pager\PagerRenderer;
 /**
  * @var PagerRenderer $pager
  */
-$pager->setSurroundCount(1);
+$pager->setSurroundCount(2);
 ?>
 
 <nav aria-label="<?= lang('Pager.pageNavigation') ?>">

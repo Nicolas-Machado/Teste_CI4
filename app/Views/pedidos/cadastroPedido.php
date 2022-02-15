@@ -17,10 +17,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="chave-nfe">Chave da NFe</label>
-                                    <input type="text" class="form-control" id="chaveNfe" name="chave_nfe" size="44" min="44" required>
+                                    <input type="text" class="form-control" id="chaveNfe" name="chave_nfe" maxlength="44" minlength="44" required>
                                 </div>
                                 <label for="produtos">Escolha um Produto:</label>
                                 <select id="produtoSelect" name="nome_produto" required>
+                                    <option selected="true" disabled="disabled"></option>
                                     <?php foreach ($produtos as $produto) { ?>
                                         <option value="<?= $produto['nome'] ?>"><?= $produto['nome'] ?></option>
                                     <?php } ?>
@@ -35,12 +36,13 @@
                                 <div class="col-sm-3">
                                     <div class="form-group">
                                         <label for="valor-produto">Valor</label>
-                                        <input type="text" class="form-control" id="valorProduto" name="valor" required>
+                                        <input type="number" class="form-control" id="valorProduto" name="valor" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="status">Status do Pedido</label>
                                     <select id="statusPedido" name="status" required>
+                                        <option selected="true" disabled="disabled"></option>
                                         <option value="Aberto">Em Aberto</option>
                                         <option value="Pago">Pago</option>
                                         <option value="Cancelado">Cancelado</option>
@@ -51,7 +53,8 @@
                                     <textarea name="descricao" style="height: 150px; width: 500px" placeholder=""></textarea>
                                 </div>
                                 <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary">Salvar</button>
+                                    <button type="submit" class="btn btn-success">Salvar</button>
+                                    <a href="/pedidos" class="btn btn-primary">Voltar</a>
                                 </div>
                         </form>
                     </div>

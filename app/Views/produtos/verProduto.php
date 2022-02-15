@@ -25,7 +25,7 @@
                                         <input type="number" name="quantidade" class="form-control" value="<?= $produto['quantidade'] ?>" disabled>
                                     </div>
                                 </div>
-                                <label for="descricao-produto">Descrição (Opcional)</label><br>
+                                <label for="descricao-produto">Descrição</label><br>
                                 <textarea name="descricao" style="height: 150px; width: 500px" disabled><?= $produto['descricao'] ?></textarea>
                                 <div class="card-footer">
                                     <a href="/produtos" class="btn btn-primary">Voltar</a>

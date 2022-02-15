@@ -21,20 +21,19 @@ class Pedidos extends BaseController
     {
         $filtro = $this->request->getVar('filtro');
         $campo  = $this->request->getVar('campo');
-
         $pedidos = $this->PedidoModel->paginate(20);
-        $pager = $this->PedidoModel->pager;
 
         if (isset($campo)) {
             $pedidos = $this->PedidoModel->buscarPedido($filtro, $campo);
-            $data['produtos'] = $pedidos;
+            $data['pedidos'] = $pedidos;
+        } else {
+            $data['pedidos'] = $pedidos;
         }
 
-        $data['pedidos'] = $pedidos;
+        $pager = $this->PedidoModel->pager;
         $data['pager'] = $pager;
         echo view('templates/header');
         echo view('pedidos/indexPedido', $data);
-        echo view('templates/footer');
     }
 
     public function cadastroPedido()
@@ -43,7 +42,6 @@ class Pedidos extends BaseController
         $data['produtos'] = $produtos;
         echo view('templates/header');
         echo view('pedidos/cadastroPedido', $data);
-        echo view('templates/footer');
     }
 
     public function store()
@@ -69,7 +67,6 @@ class Pedidos extends BaseController
         $data['pedido'] = $pedido;
         echo view('templates/header');
         echo view('pedidos/editarPedido', $data);
-        echo view('templates/footer');
     }
 
     public function excluirPedido($id)
@@ -85,6 +82,5 @@ class Pedidos extends BaseController
         $data['pedido'] = $pedido;
         echo view('templates/header');
         echo view('pedidos/verPedido', $data);
-        echo view('templates/footer');
     }
 }

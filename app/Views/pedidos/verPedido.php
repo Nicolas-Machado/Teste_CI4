@@ -39,7 +39,7 @@
                                     <label for="status">Status do Pedido</label>
                                     <input type="text" class="form-control" id="status" name="status" value="<?= $pedido['status'] ?>" disabled>
                                 </div>
-                                <label for="descricao-pedido">Descrição (Opcional)</label><br>
+                                <label for="descricao-pedido">Descrição</label><br>
                                 <textarea name="descricao" style="height: 150px; width: 500px" class="form-control" disabled><?= $pedido['descricao'] ?></textarea>
                                 <div class="card-footer">
                                     <a href="/pedidos" class="btn btn-primary">Voltar</a>

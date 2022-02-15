@@ -19,12 +19,12 @@ class Produtos extends BaseController
     {
         $filtro = $this->request->getVar('filtro');
         $campo  = $this->request->getVar('campo');
-
         $produtos = $this->ProdutoModel->paginate(20);
-        $data['produtos'] = $produtos;
 
-        if (isset($campo)) {
+        if (isset($filtro)) {
             $produtos = $this->ProdutoModel->buscarProduto($filtro, $campo);
+            $data['produtos'] = $produtos;
+        } else {
             $data['produtos'] = $produtos;
         }
 
@@ -32,14 +32,12 @@ class Produtos extends BaseController
         $data['pager'] = $pager;
         echo view('templates/header');
         echo view('produtos/indexProduto', $data);
-        echo view('templates/footer');
     }
 
     public function cadastroProduto()
     {
         echo view('templates/header');
         echo view('produtos/cadastroProduto');
-        echo view('templates/footer');
     }
 
     public function store()
@@ -62,7 +60,6 @@ class Produtos extends BaseController
         $data['produto'] = $produto;
         echo view('templates/header');
         echo view('produtos/editarProduto', $data);
-        echo view('templates/footer');
     }
 
     public function excluirProduto($id)
@@ -78,6 +75,5 @@ class Produtos extends BaseController
         $data['produto'] = $produto;
         echo view('templates/header');
         echo view('produtos/verProduto', $data);
-        echo view('templates/footer');
     }
 }

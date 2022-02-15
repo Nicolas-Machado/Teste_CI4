@@ -10,8 +10,5 @@ class Menu extends Controller
     {
         echo View('templates/header');
         echo View('menu/index');
-        echo View('templates/footer');
     }
 }
-
-?>
